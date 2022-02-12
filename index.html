@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="Paline,极简风,评论系统,极简风评论系统,comment system">
+    <meta name="description" content="Paline - 一款基于gotapit的极简风评论系统">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1">
+    <title>Paline - A simple comment system based on Leancloud.</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", Arial, sans-serif;
+        }
+
+        body {
+            background-color: rgb(238, 238, 238);
+        }
+
+        header {
+            background: #fff;
+        }
+
+        a {
+            color: #999;
+            text-decoration: none;
+            border-bottom: 1px dotted #dedede;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 60px;
+            font-size: 24px;
+            line-height: 60px;
+            color: #4285f4;
+            vertical-align: base-line;
+        }
+
+        .sub {
+            font-size: 12px;
+            color: #9c9c9c;
+            padding: 0 5px;
+        }
+
+        .market {
+            background-color: #4285f4;
+            height: 398px;
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            outline: none;
+            display: block;
+            z-index: -1;
+        }
+
+        .container {
+            width: 80%;
+        }
+
+        .placeholder {
+            height: 56px;
+        }
+
+        @media screen and (max-width:720px) {
+            header {
+                text-align: center;
+            }
+            .sub {
+                display: block;
+                padding-bottom: 10px;
+            }
+            .container {
+                width: 100%;
+            }
+            .placeholder,
+            .market {
+                display: none;
+            }
+        }
+
+        .content {
+            background: #fff;
+            padding: 10px;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .prolist {
+            padding: 10px 20px 20px 20px;
+            font-weight: 400;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Mirages Custom', 'Merriweather', 'Open Sans', "Segoe UI", Roboto, "PingFang SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        blockquote {
+            margin: 10px 0;
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+        }
+
+        #github {
+            padding: 20px 0;
+        }
+
+        .copy {
+            line-height: 60px;
+            text-align: center;
+            font-size: 14px;
+            color: #9c9c9c;
+        }
+    </style>
+    <script src="/src/index.js" type="module"></script>
+</head>
+
+<body>
+    <div class="market"></div>
+    <header>
+        <div class="container">
+            <a href="./" class="logo">Paline</a>
+            <span class="sub">A simple comment system based on Leancloud.</span>
+        </div>
+    </header>
+    <div class="container">
+        <div class="placeholder"></div>
+        <div class="content">
+            <div id="github">
+                <iframe allowtransparency="true" frameborder="0" scrolling="0" width="98" height="20"></iframe>
+                <iframe allowtransparency="true" frameborder="0" scrolling="0" width="156" height="20"></iframe>
+            </div>
+            <div class="comment"></div>
+        </div>
+    </div>
+    <div class="copy">
+        &copy; 2017 first published by <a href="https://github.com/xCss" target="_blank">云淡风轻</a> as <b>Valine</b>
+        .
+        <a href="https://gotapi.net/" target="_blank">Gotapi</a> republished as <b>Paline</b>
+    </div>
+    <script type="module">
+        import Paline from "./src";
+        var PalineComment = new Paline();
+        PalineComment.init({
+            el: '.comment',
+            app_id: '3GiiCyXCrGbOIH3EelCfJ6yw-gzGzoHsz',
+            app_key: 'iuneD4hXPQImdHQSRE0aOcRF',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+            secret:"lv1070xr8dxf0f77i93bhihj61hwhr30438",
+            path: window.location.pathname,
+            notifyMail:"55547082@qq.com",
+            avatar:'identicon', // 1.1.7 新增(mm/identicon/monsterid/wavatar/retro)
+            // guest_info: ['nick'] // 默认 ['nick', 'mail', 'link']
+        })
+
+
+
+        window.onload = function() {
+            let iframes = document.querySelectorAll('iframe');
+            iframes[0].setAttribute('src', 'https://ghbtns.com/github-btn.html?user=gotapi&repo=Paline&type=watch&count=true');
+            iframes[1].setAttribute('src', 'https://ghbtns.com/github-btn.html?user=xurenlu&type=follow&count=true');
+        }
+    </script>
+</body>
+
+</html>
